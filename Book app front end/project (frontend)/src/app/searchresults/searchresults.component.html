@@ -1,0 +1,47 @@
+<mat-card class="noteCardContainer">
+  <mat-card-content
+    ><img src="{{ bk.bookImage }}" class="imgage"
+  /></mat-card-content>
+  <mat-card-content class="cont"
+    ><b>Category Name : </b>{{ bk.bookCategory }}</mat-card-content
+  >
+
+  <mat-card-content class="cont">{{ bk.bookPrice }}</mat-card-content>
+  <mat-card-content class="cont">
+    <b>Language : </b>{{ bk.bookLanguage }}</mat-card-content
+  >
+  <!-- <mat-card-content class="cont">{{bk.bookCurrencytCode}}</mat-card-content> -->
+
+  <button
+    *ngIf="flag2 == false"
+    type="submit"
+    mat-button
+    (click)="favourite(bk.bookId)"
+  >
+    <img
+      src="https://img.icons8.com/color/48/000000/hearts.png
+"
+    />
+  </button>
+  <button
+    type="submit"
+    *ngIf="flag == true && flag2 == false"
+    mat-button
+    class="btn1"
+    (click)="recommend(bk.bookId)"
+  >
+    Recommend
+  </button>
+  <button
+    type="submit"
+    *ngIf="flag == false && flag2 == false"
+    mat-button
+    class="btn1"
+    (click)="unrecommend(bk.bookId)"
+  >
+    Un-Recommend</button
+  ><br /><br />
+  <button mat-raised-button (click)="openDialog(bk)">
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </button>
+</mat-card>
